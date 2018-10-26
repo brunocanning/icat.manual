@@ -52,10 +52,10 @@ curl -O https://icatproject.org/misc/scripts/setup-glassfish.py
 cd
 ```
 
-Run the setup script. We pass it 3 options: the domain name, the maximum amount of memory to use and the password for the root account of the MariaDB database. So for a domain name of `domain1`, with a maximum memory usage of 75% and a root MariaDB account password of 'pw', run:
+Run the setup script. We pass it 3 options: the domain name, the maximum amount of memory to use and the password for the root account of the MariaDB database. So for a domain name of `domain1`, with a maximum memory usage of 75% and a root MariaDB account password of '$GLASSFISH_ADMIN_PASSWD', run:
 
 ```Shell
-python scripts/setup-glassfish.py domain1 75% pw
+python scripts/setup-glassfish.py domain1 75% $GLASSFISH_ADMIN_PASSWD
 ```
 
 Configure Payara for MariaDB
