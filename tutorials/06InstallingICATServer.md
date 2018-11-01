@@ -78,16 +78,16 @@ exportCacheSize = 50
 authn.list = simple
 
 # Parameters for each of the four plugins
-!authn.db.jndi       = java:global/authn.db-1.2.0/DB_Authenticator
+!authn.db.url = https://localhost:8181
 
-!authn.ldap.jndi     = java:global/authn.ldap-1.2.0/LDAP_Authenticator
-!authn.ldap.admin    = true
+!authn.ldap.url = https://localhost:8181
+!authn.ldap.admin = true
 !authn.ldap.friendly = Federal Id
 
-authn.simple.url      = https://localhost.localdomain:8181
+authn.simple.url = https://localhost.localdomain:8181
 authn.simple.friendly = Simple
 
-!authn.anon.url      = https://localhost:8181
+!authn.anon.url = https://localhost:8181
 !authn.anon.friendly = Anonymous
 
 # Notification setup
