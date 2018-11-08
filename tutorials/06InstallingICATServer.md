@@ -36,7 +36,7 @@ port = 4848
 db.driver      = com.mysql.jdbc.jdbc2.optional.MysqlDataSource
 db.url         = jdbc:mysql://localhost:3306/icatdb
 db.username    = icatdbuser
-db.password    = icatdbuserpw
+db.password    = $DB_ICAT_PASSWD
 ```
 
 The ICAT install script installs a few executable scripts. We need to create a directory for them and add it to our `$PATH` variable.
