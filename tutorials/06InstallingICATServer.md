@@ -170,7 +170,7 @@ testicat <url> <mnemonic> username <username> password <password>
 
 So for this tutorial, the values would be:
 ```Shell
-testicat https://localhost:8181 simple username root password pw
+testicat https://localhost:8181 simple username root password rootpw
 ```
 and the output would look like this (ignoring a warning about certificates):
 ```
