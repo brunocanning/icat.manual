@@ -50,6 +50,8 @@ There are a lot of parameters for the ICAT Server but we only need to change a f
 * Set the `rootUserNames` parameter to `simple/root` - that is the `root` username configured using the `simple` authentication mechanism.
 * Set `authn.list` to `simple` - we are only using the simple authentication plugin in this tutorial.
 * Add `authn.simple.friendly = Simple` below the `authn.simple.url`. These tell ICAT where to find the `simple` authentication plugin and what to call it.
+* Set the value of `authn.simple.url`, the FQDN in this URL must be the same as the CN of the payara certificate obtained from part 3 of this tutorial.
+* Set the value of `lucene.url`, the FQDN in this URL must be the same as the CN of the payara certificate obtained from part 3 of this tutorial.
 * Finally, set the `lucene.directory` parameter to the directory created before: `/home/glassfish/data/lucene`.
 
 ```INI
@@ -84,7 +86,7 @@ authn.list = simple
 !authn.ldap.admin = true
 !authn.ldap.friendly = Federal Id
 
-authn.simple.url = https://localhost.localdomain:8181
+authn.simple.url = https://$PAYARA_CERTIFICATE_CN:8181
 authn.simple.friendly = Simple
 
 !authn.anon.url = https://localhost:8181
@@ -99,7 +101,7 @@ notification.Datafile = CU
 log.list = SESSION WRITE READ INFO
 
 # Lucene
-lucene.url = https://localhost.localdomain:8181
+lucene.url = https://$PAYARA_CERTIFICATE_CN:8181
 lucene.populateBlockSize = 1000
 lucene.directory = /home/glassfish/data/lucene
 lucene.backlogHandlerIntervalSeconds = 60
