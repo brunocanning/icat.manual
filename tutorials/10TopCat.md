@@ -50,6 +50,14 @@ db.driver = com.mysql.jdbc.jdbc2.optional.MysqlDataSource
 db.url = jdbc:mysql://localhost:3306/topcatdb
 db.username = topcatdbuser
 db.password = $DB_TOPCAT_PASSWD
+
+# Email setup see http://docs.oracle.com/cd/E26576_01/doc.312/e24938/create-javamail-resource.htm#GSRFM00035
+mail.host = smtp.example.com
+mail.user = user@example.com
+mail.from = no-reply@example.com
+
+# See https://javamail.java.net/nonav/docs/api/ for list of properties
+mail.property = mail.smtp.port="25":mail.smtp.from="no-reply@example.com"
 ```
 
 Copy the `topcat.properties.example` file to `topcat.properties`. We associate the `LILS` facility with the URLs of our services and the disable email alerts. We can leave the rest of the parameters to their defaults except the `adminUserNames`. We want to set the `adminUserNames` to the administration user account - in our case the `root` user configured in the `simple` authentication plugin.
