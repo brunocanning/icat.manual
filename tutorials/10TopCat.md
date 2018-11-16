@@ -25,10 +25,15 @@ unzip ~/downloads/topcat-2.4.0-distro.zip
 Configure the TopCat server
 ---------------------------
 
-Create a new database for the TopCat server to use:
-
+Create the database and user for the TopCat server to use. For this tutorial, the TopCat database is 'topcatdb', the database user is 'topcatdbuser' and the password is '$DB_TOPCAT_PASSWD'.
 ```Shell
-mysqladmin --user=root --password=pw create topcat
+[root@localhost ~]# mysql -u root -p -h localhost
+```
+```SQL
+MariaDB [(none)]> CREATE DATABASE topcatdb;
+MariaDB [(none)]> CREATE USER 'topcatdbuser'@'localhost' IDENTIFIED BY '$DB_TOPCAT_PASSWD';
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON topcatdb.* TO 'topcatdbuser'@'localhost';
+MariaDB [(none)]> QUIT;
 ```
 
 Change directory into `topcat` and copy the `topcat-setup.properties.example` file to `topcat-setup.properties`. The first two sections of the file will be familiar - we tell the TopCat installer where to find MariaDB and Payara. Make sure to change the username, password and database url. Leave the email settings for now as we do not need them for this tutorial.
